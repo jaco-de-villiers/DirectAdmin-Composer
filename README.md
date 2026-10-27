@@ -17,3 +17,5 @@ If you'd like to contribute, feel free to submit a pull request!
 
 ## License
 Composer for DirectAdmin is released under the MIT License.
+
+Updated to work on php version 8.2
