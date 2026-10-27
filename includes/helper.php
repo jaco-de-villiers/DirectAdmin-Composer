@@ -3,7 +3,7 @@ class Helper {
 
     // Modified version of http://stackoverflow.com/a/32664523
     public static function executeCommand($cmd, $printLiveResult = false) {
-        while (ob_end_flush());
+        while (ob_get_level() > 0 && ob_end_flush());
 
         $proc = popen($cmd.' 2>&1 ; echo Exit: $?', 'r');
         $live_output = '';
