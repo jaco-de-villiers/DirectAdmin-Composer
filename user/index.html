@@ -47,7 +47,9 @@ include dirname(__DIR__).'/includes/header.php';
 
         <div role="tabpanel" class="tab-pane fade in active composerMargin" id="install">
             <?php
-            switch ($_GET['result']) {
+            // FIXED: Safely default to an empty string if 'result' is missing from GET parameters
+            $resultKey = $_GET['result'] ?? '';
+            switch ($resultKey) {
                 case 'notexist':
                     echo Helper::getAlertsHtml('Target path not exist / Cannot find composer.json in target path', 'warning');
                     break;
